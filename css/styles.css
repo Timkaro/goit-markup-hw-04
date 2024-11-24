@@ -46,18 +46,18 @@ img {
   border-bottom: 1px solid #e7e9fc;
 }
 
-.container { 
+.container {
   width: 1158px;
-  margin: 0 auto;  
-  padding: 0 15px; 
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-.top .container{
+.top .container {
   display: flex;
   justify-content: space-between;
 }
 
- .contact-logo {
+.contact-logo {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -91,40 +91,55 @@ img {
   color: #2e2f42;
   padding-top: 24px;
   padding-bottom: 24px;
- }
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .menu:hover,
 .menu:focus,
 .contact-link:hover,
 .contact-link:focus {
   color: #404bbf;
-} 
+}
+
+.menu .act::before,
+.menu .act::after {
+  content: "";
+  border-radius: 2px;
+  width: 48px;
+  height: 4px;
+  background: #ffffff;
+}
+
+.menu .act:active::before,
+.menu .act:active::after {
+  background: #404bbf;
+}
 
 .contact-list {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   font-style: normal;
-  color: #434455
- }
-
- .contact-link {
-  color: currentColor;  
+  color: #434455;
 }
 
-.hero-image .container {
-  background-image: linear-gradient(
-    to bottom, 
-    rgba(46, 47, 66, 0.7)), 
-    url(https://github.com/Timkaro/goit-markup-hw-03/blob/main/images/people-office.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.contact-link {
+  color: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-image {
   background-color: #2e2f42;
-  
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+  background-size: 1140px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: #ffffff;
   padding-top: 188px;
   padding-bottom: 188px;
@@ -158,6 +173,7 @@ img {
   margin-top: 48px;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-image-btn:hover,
@@ -177,7 +193,7 @@ img {
 }
 
 .visually-hidden {
-  position: absolute; 
+  position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -193,6 +209,17 @@ img {
   display: flex;
   gap: 24px;
   padding: 0;
+}
+
+.future-icon {
+  text-align: center;
+  align-content: center;
+  background-color: #f4f4fd;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  margin-bottom: 8px;
 }
 
 .future-list-mark {
@@ -229,7 +256,9 @@ img {
 .content-mark {
   background-color: #ffffff;
   border-radius: 0 0 4px 4px;
-  width: calc((100% - 72px) / 4); 
+  width: calc((100% - 72px) / 4);
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .content-mark-descr {
@@ -237,8 +266,39 @@ img {
   text-align: center;
 }
 
+.icons {
+  display: flex;
+  margin-top: 8px;
+  padding-left: 0;
+}
+
+.icons-svg {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  gap: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+}
+
+.icons-svg:hover,
+.icons-svg:focus {
+  background-color: #404bbf;
+}
+
+.icon-ellipse {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+}
+
 .project-cards {
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
 }
 
 .project-cards .container {
@@ -256,12 +316,39 @@ img {
 
 .apps-list {
   width: calc((100% - 48px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.apps-list-descr {
+.apps-list:hover,
+.apps-list:focus {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.apps-list .apps-list-descr {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
   border-top: none;
+}
+
+.apps-list .overlay {
+  background-color: #4d5ae5;
+  color: #f4f4fd;
+  padding: 40px 32px 164px 32px;
+  position: absolute;
+  transform: translateY(100%);
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 300px;
+  overflow: hidden;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.apps-list:hover .overlay {
+  transform: translateY(0);
 }
 
 .down {
@@ -272,8 +359,8 @@ img {
   padding-bottom: 100px;
 }
 
-.down .container { 
-  display: inline-block ;
+.down .container {
+  display: flex;
 }
 
 .logo-down {
@@ -284,7 +371,7 @@ img {
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: #4d5ae5;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   margin-bottom: 16px;
 }
 
@@ -292,6 +379,19 @@ img {
   color: #f4f4fd;
 }
 
-.down-descr {
+.down-text p {
   max-width: 264px;
+}
+
+.down-icons p {
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.down-icons {
+  margin-left: 120px;
+}
+
+.down-icons .icons {
+  gap: 16px;
 }
