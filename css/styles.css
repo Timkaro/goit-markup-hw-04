@@ -63,6 +63,9 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
@@ -90,7 +93,6 @@ img {
 
 .menu {
   position: relative;
-  content: "";
   font-weight: 500;
   color: #2e2f42;
   padding-top: 24px;
@@ -105,7 +107,12 @@ img {
   color: #404bbf;
 }
 
-.act::after {
+.contact-menu-list:nth-child(1) .menu {
+  color: #404bbf;
+}
+
+.contact-menu-list:nth-child(1) .menu:active::before,
+.contact-menu-list:nth-child(1) .menu:active::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -218,13 +225,7 @@ img {
   padding: 0;
 }
 
-.feature .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.feature-icons {
+.eature-icons {
   text-align: center;
   align-content: center;
   background-color: #f4f4fd;
@@ -417,4 +418,9 @@ img {
 
 .down-icons .icons {
   gap: 16px;
+}
+
+.down-icons .icons-link:hover,
+.down-icons .icons-link:focus {
+  background-color: #31d0aa;
 }
