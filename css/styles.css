@@ -111,8 +111,8 @@ img {
   color: #404bbf;
 }
 
-.contact-menu-list:nth-child(1) .menu:active::before,
-.contact-menu-list:nth-child(1) .menu:active::after {
+.contact-menu-list:nth-child(1) .menu::before,
+.contact-menu-list:nth-child(1) .menu::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -225,7 +225,11 @@ img {
   padding: 0;
 }
 
-.eature-icons {
+.feature-list-mark {
+  width: calc((100% - 72px) / 4);
+}
+
+.feature-icons {
   text-align: center;
   align-content: center;
   background-color: #f4f4fd;
@@ -234,10 +238,6 @@ img {
   width: 264px;
   height: 112px;
   margin-bottom: 8px;
-}
-
-.feature-list-mark {
-  width: calc((100% - 72px) / 4);
 }
 
 .feature-title,
